@@ -6,6 +6,7 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
+    "format": "npx prettier --write .",
     "postinstall": "remix setup node",
     "start": "remix-serve build"
   },
