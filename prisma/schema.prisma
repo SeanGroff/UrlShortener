@@ -7,18 +7,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model urls {
+model Url {
   id        Int    @id @default(autoincrement())
-  short_url String @unique
-  full_url  String @unique
-  user_id   Int?
-  users     users? @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  shortUrl String @unique
+  fullUrl  String @unique
+  userId   Int?
+  users     User?  @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
-model users {
+model User {
   id         Int    @id @default(autoincrement())
-  first_name String
-  last_name  String
+  firstName String
+  lastName  String
   email      String
-  urls       urls[]
+  urls       Url[]
 }

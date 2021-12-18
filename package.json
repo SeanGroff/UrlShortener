@@ -5,6 +5,9 @@
   "license": "",
   "scripts": {
     "build": "remix build",
+    "db:pull": "npx prisma db pull",
+    "db:push": "npx prisma db push",
+    "db:view": "npx prisma studio",
     "dev": "remix dev",
     "format": "npx prettier --write .",
     "postinstall": "remix setup node",
